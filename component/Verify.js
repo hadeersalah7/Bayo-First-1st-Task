@@ -101,11 +101,11 @@ function Verify() {
                     <p className="text-error p-2">{errors.digit6?.type === 'required' && "You Must Fill All 6 Digits"}</p>
 
                     <Row id="continue">
-                        <Col md={5}>
+                        <Col xs={6}>
                             <p><a href='#' className='anchor'>Send code again</a></p>
                         </Col>
 
-                        <Col md={5}>
+                        <Col xs={5}>
                             <button type="submit" className='btn'>Continue</button>
 
                         </Col>
