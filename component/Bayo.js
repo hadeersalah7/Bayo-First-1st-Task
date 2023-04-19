@@ -46,10 +46,8 @@ function Bayo() {
             <div className="form-floating mb-3">
               <input type="email" name='email'
               {...register("email", {
-                required: true,
-                minLength: {
-                  value: 8,
-                }
+                required: true
+                
               })
             }
             className={`form-control ${errors.email ? 'border-danger' : ''}`}
@@ -76,7 +74,7 @@ function Bayo() {
               <span className='eye-password' onClick={() => setClick(!click)}><i class="ri-eye-fill"></i></span>
            
               <Row> 
-                 <Col md={11}>
+                 <Col xs={11}>
                 <p className="error">{errors.password?.type==='required' && "Password Must Be More Than 8 Characters And Contain One Letter"}</p>
                 </Col>
               </Row> 

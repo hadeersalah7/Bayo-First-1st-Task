@@ -27,7 +27,7 @@
 
    img{
     width: 120px;
-    margin-left: 13px;
+    margin-left: 10px;
    }
 
    $line-width: 1px;  
@@ -51,7 +51,7 @@
         size: 1.2em;
     }
     margin-top: 5px;
-    margin-left: -12px;
+    margin-left: -9px;
      text-transform: uppercase;
    }
 }
@@ -161,7 +161,7 @@ label::after{
    justify-content: space-evenly;
     width: 170px;
     height: 40px;
-    border: 2px solid $focus-color;
+    border: 1px solid $font-color;
     border-radius: 5px;
 
     #img1{
@@ -173,10 +173,10 @@ label::after{
         text-align: center;
         font-weight: 600;
         padding-top: 17px;
-        color: $focus-color;
+        color: $font-color;
         a{
             text-decoration: none;
-            color:$focus-color;
+            color:$font-color;
         }
     }
 
@@ -190,7 +190,7 @@ label::after{
     justify-content: space-evenly;
      width: 170px;
      height: 40px;
-     border: 2px solid $focus-color;
+     border: 1px solid $font-color;
      border-radius: 5px;
        
        #img2{
@@ -203,11 +203,11 @@ label::after{
         text-align: center;
         font-weight: bolder;
         padding-top: 17px;
-        color: $focus-color;
+        color: $font-color;
 
         a{
             text-decoration: none;
-            color: $focus-color;
+            color: $font-color;
         }
     }
 
