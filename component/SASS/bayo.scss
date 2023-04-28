@@ -7,7 +7,7 @@
     margin-top: 40px;
     width:400px;
     padding: 10px;
-    height: 550px;
+    height: auto;
     background-color: $container-col;
     border-radius: 10px;
     text-align: center;
@@ -27,11 +27,11 @@
 
    img{
     width: 120px;
-    margin-left: 10px;
+    margin-left: 6px;
    }
 
    $line-width: 1px;  
-   $line-height: 36px;
+   $line-height: 32px;
    span{
     position: relative;
 
@@ -64,14 +64,15 @@ h3{
 }
 
 form {
-padding-left: 40px;
+padding-right: 20px;
+padding-left: 20px;
 }
 
 .form-control {
     border-bottom-left-radius: 1px;
     border-bottom-right-radius: 1px;
-    width: 90%;
-    
+    width: 100%;
+    color: $font-color;
     background-color: $link-color;
     &:focus {
         background-color: $focus-color;
@@ -81,7 +82,6 @@ padding-left: 40px;
         border-bottom: 3px solid $button-color;
    
     }
-    
 }
 
 
@@ -99,14 +99,11 @@ label {
    color: $font-color !important;
    &:focus{
     color: $button-color !important;
-//     &:before{
-//         color: $button-color !important;
-//     }
+
 }
 }   
 
 
- 
 
 label::after{
     background-color: transparent !important;
@@ -140,19 +137,49 @@ label::after{
 
 .eye-password{
     position: absolute;
-    top: 23%;     
-    right: 50px;
+    top: 25%;     
+    right: 20px;
     cursor: pointer;
     &:hover {
      color: $button-color;
     }
  }
 
-#hr hr{
-    color: $font-color;
-    height:5px;
-    width: 140px;
-}
+
+
+#hr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    hr {
+      flex: 1;
+      height: 1px;
+      border: none;
+      background-color: #827c7c;
+      margin: 0 10px;
+      
+      &::before {
+        content: "";
+        display: inline-block;
+        font-weight: thin;
+        font-size: 3px;
+        color: #999;
+        position: relative;
+        top: -8px;
+        padding: 0 10px;
+      }
+    }
+
+    p {
+      position: relative;
+      top: 6px;
+      padding: 0 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: $test-color;
+    }
+  }
 
 
 .google {
@@ -213,14 +240,90 @@ label::after{
 
 }
 
+
+
+
+
 @media only screen and (max-width: 400px) {
-    // .container {
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
+
+  .container {
+    width: 100%;
+    max-width: 400px;
+
+    // margin-top: 20px;
   }
+
+  // #head img {
+  //   width: 100px;
+  //   margin-left: 30px;
+  // }
+
+
+
+  .form-control {
+    width: 100%;
+  }
+
+  #password button {
+    width: 60px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  #password p {
+    font-size: 10px;
+  }
+
+  .google, .micro {
+    width: 150px;
+
+    p {
+      font-size: 10px;
+      padding-top: 15px;
+    }
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .container {
+    width: 100% !important;
+    // max-width: 200px;
+  }
+
+  #head img {
+    width: 85px;
+    // margin-left: 2px;
+  }
+
+  #head  h2 {
+    margin-left: -13px;
+    font-size: 0.9em;
+  }
+
+
+  #password button {
+    width: 50px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+
+
+  .google, .micro {
+    width: 120px;
+
+    p {
+      font-size: 10px;
+      padding-top: 12px;
+    }
+  }
+
+}
+  
+
+
 
 
 @media only screen and (max-width: 768px) {

@@ -8,7 +8,7 @@ function Bayo() {
 
   const {register, formState: {errors}, handleSubmit} = useForm()
 
-  const [click, setClick] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   
 
@@ -31,7 +31,7 @@ function Bayo() {
 
 
               <Col xs={3}>
-                <h2>Transfer</h2>
+                <h2 className='transfer'>Transfer</h2>
               </Col>
 
             </Row>
@@ -39,45 +39,53 @@ function Bayo() {
 
 
           <div className='d-flex justify-content-center align-items-center text-center'>
-            <h3>Login</h3>
+            <h3 className='login'>Login</h3>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} >
             <div className="form-floating mb-3">
               <input type="email" name='email'
               {...register("email", {
-                required: true
-                
+                required: "Email is required",
+                pattern: {
+                 value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: "Email Must Be Valid",
+              }
               })
             }
             className={`form-control ${errors.email ? 'border-danger' : ''}`}
                id="floatingInput" placeholder="name@example.com"></input>
               <label htmlFor="floatingInput" className="form-label">Email</label>
-              <p className="error">{errors.email?. type=== 'required' && "Email is required"}</p>
-
+             {/* {errors.email?. type=== 'required' && <p className="erro"> "Email is required"</p>} */}
+            <p className='error'>{errors.email?.message}</p>
             </div>
 
             {/* Password Input */}
             <div className="form-floating">
 
 
-              <input type={click ? 'text' : 'password'}   name='password' {...register("password", {
-                required: true,
+              <input type={showPassword ? 'text' : 'password'}   name='password' {...register("password", {
+                required: "Password is required",
+                pattern: {
+                  value: /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/,
+                  message: "Password Must Be More Than 8 Characters And Contain One Letter",
+                },
                 minLength:{
                   value: 8,
+                  message: "Password Must Have at least 8 charachters",
                 }
               })} 
               className={`form-control ${errors.password ? 'border-danger' : ''}`}
               
-              id="floatingPassword" placeholder="Password"></input>
+              id="floatingPassword" placeholder="Password" />
               <label htmlFor="floatingPassword" className="form-label">Password</label>
-              <span className='eye-password' onClick={() => setClick(!click)}><i class="ri-eye-fill"></i></span>
-           
-              <Row> 
-                 <Col xs={11}>
-                <p className="error">{errors.password?.type==='required' && "Password Must Be More Than 8 Characters And Contain One Letter"}</p>
-                </Col>
-              </Row> 
+              <span className='eye-password' onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <i clasName="ri-eye-off-fill"></i> : <i className="ri-eye-fill"></i>}
+              </span>
+              <p className='error'>{errors.password?.message}</p>
+
+               {/* {errors.password?.type==='required' && <p className="erro"> "Password Must Be More Than 8 Characters And Contain One Letter"</p>} */}
+            
             </div>
 
 
@@ -85,29 +93,25 @@ function Bayo() {
 
 
             <Row id="password">
-              <Col xs={5}>
+              <Col xs={8}>
                 <p><a href='/'>Forgot my password</a></p>
               </Col>
 
-              <Col xs={5}>
+              <Col xs={3}>
                 <button type='submit' className='btn'>Login</button>
 
               </Col>
             </Row>
           </form>
 
-          <Row id="hr">
-            <Col xs={5}>
+          <div id="hr">
               <hr></hr>
-            </Col>
-            <Col xs={2}>
+            
               <p>or</p>
-            </Col>
-
-            <Col xs={5}>
+                       
               <hr></hr>
-            </Col>
-          </Row>
+              </div>
+            
 
           <div>
 

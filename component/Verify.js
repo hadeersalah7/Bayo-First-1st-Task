@@ -22,16 +22,16 @@ function Verify() {
                     <Row>
 
                         <Col xs={{ offset: 1, span: 4 }}>
-                            <img src={myImage} alt='Bayo Logo' />
+                            <img src={myImage} alt='Bayo Logo' className='image'/>
                         </Col>
 
                         <Col xs={{ offset: 1, span: 1 }}>
-                            <span></span>
+                            <span />
                         </Col>
 
 
                         <Col xs={3}>
-                            <h2>Transfer</h2>
+                            <h2 id='header'>Transfer</h2>
                         </Col>
 
                     </Row>
@@ -41,10 +41,10 @@ function Verify() {
 
                 <p className='code'>We've sent a code to your configured two-factor authentication code</p>
                
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form id="verifyForm" onSubmit={handleSubmit(onSubmit)}>
                     <Row>
                         <Col xs={6}>
-                            <input type='text' name='digit1'
+                            <input type='text' name='digit1' maxLength={1}
                                 {...register('digit1', {
                                     required: true,
                                 })}
@@ -53,7 +53,7 @@ function Verify() {
                             </input>
 
 
-                            <input type='text'
+                            <input type='text' maxLength={1}
                                 name='digit2'
                                 {...register('digit2', {
                                     required: true,
@@ -61,7 +61,7 @@ function Verify() {
                                 className={`hover ${errors.digit2 ? 'border-danger text-danger' : ''}`}
                                 ></input>
 
-                            <input type='text' name='digit3'
+                            <input type='text' name='digit3' maxLength={1}
                                 {...register('digit3', {
                                     required: true,
                                 })}
@@ -73,21 +73,21 @@ function Verify() {
 
 
                         <Col xs={6}>
-                            <input type='text' name='digit4'
+                            <input type='text' name='digit4' maxLength={1}
                                 {...register('digit4', {
                                     required: true,
                                 })}
                                 className={`hover ${errors.digit4 ? 'border-danger text-danger' : ''}`} 
                                 ></input>
 
-                            <input type='text' name='digit5'
+                            <input type='text' name='digit5' maxLength={1}
                                 {...register('digit5', {
                                     required: true,
                                 })}
                                 className={`hover ${errors.digit5 ? 'border-danger text-danger' : ''}`} 
                                 ></input>
 
-                            <input type='text' name='digit6'
+                            <input type='text' name='digit6' maxLength={1}
                                 {...register('digit6', {
                                     required: true,
                                 })}
