@@ -31,7 +31,7 @@
    }
 
    $line-width: 1px;  
-   $line-height: 32px;
+   $line-height: 30px;
    span{
     position: relative;
 
@@ -289,7 +289,6 @@ label::after{
 
   .container {
     width: 100% !important;
-    // max-width: 200px;
   }
 
   #head img {
@@ -310,20 +309,36 @@ label::after{
   }
 
 
-
-  .google, .micro {
-    width: 120px;
+  .google {
+    #img1 {
+      width: 17px;
+    }
 
     p {
       font-size: 10px;
-      padding-top: 12px;
     }
+  }
+ 
+  .micro {
+    #img2 {
+      width: 17px;
+
+    }
+
+    p{
+      font-size: 10px;
+      font-weight: 700;
+    }
+  }
+
+  .google, .micro {
+    width: 130px;
+
+  
   }
 
 }
   
-
-
 
 
 @media only screen and (max-width: 768px) {
@@ -336,20 +351,10 @@ label::after{
   }
 
   @media only screen and (max-width: 1200px) {
-    // .container {
-    //   position: absolute;
-    //   top: 45%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
+    
   }
 
   @media only screen and (max-width: 1400px) {
-    // .container {
-    //   position: absolute;
-    //   top: 45%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
+   
   }
 
